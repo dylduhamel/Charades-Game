@@ -39,12 +39,12 @@ class Game:
 
         # start and stop buttons
         self.start_button = Button(frame, fg="white", text="Start", relief=RAISED,
-        bg="red", padx=10, pady=5, command=self.start, width=7, height=2)
+        highlightbackground="#ff0000", padx=10, pady=5, command=self.start, width=7, height=2)
         self.start_button.grid(column=0, row=3, pady=20, columnspan=1)
 
-        self.play_button = Button(frame, fg="white", text="Play", relief=RAISED, 
-        background="red", padx=10, pady=5, width=7, height=2)
-        self.play_button.grid(column=1, row=3, pady=20)
+        self.next_button = Button(frame, fg="white", text="Next", relief=RAISED, 
+        highlightbackground="#ff0000", padx=10, pady=5, width=7, height=2)
+        self.next_button.grid(column=1, row=3, pady=20)
 
         # frame for the category to be displayed
         self.category_labelframe = LabelFrame(frame, text="Phrase:", width=250, height=75)
@@ -97,7 +97,11 @@ class Game:
 
     def start(self):
         ## WHEN CLICKED START TIMER AND DO WORD
+        time = int(self.time_entry.get())
         self.phrase_label.configure(text="Put the words in here and loop")
+
+        for i in range(0,time):
+            self.time_label.update(text=i)
 
     def select_category(self, category):
         self.chosen_category = category
