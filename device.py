@@ -101,7 +101,7 @@ class Game:
         self.phrase_label.configure(text="Put the words in here and loop")
 
         for i in range(0,time):
-            self.time_label.update(text=i)
+            self.time_label
 
     def select_category(self, category):
         self.chosen_category = category
